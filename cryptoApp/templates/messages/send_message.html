@@ -1,0 +1,13 @@
+{% extends 'messages/base.html' %}
+
+{% block content %}
+<h2>Send Encrypted Message</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="message">Message:</label>
+    <input type="text" name="message" required><br>
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" name="phone_number" required><br>
+    <button type="submit">Send</button>
+</form>
+{% endblock %}

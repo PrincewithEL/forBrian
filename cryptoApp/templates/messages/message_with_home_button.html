@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message</title>
+    <style>
+        .container {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            margin-bottom: 20px;
+        }
+        .decrypted-message {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+            {{ message }}
+        </div>
+        {% if decrypted_message %}
+            <div class="decrypted-message">
+                Decrypted Message: {{ decrypted_message }}
+            </div>
+        {% endif %}
+        <a class="home-button" href="{% url 'index' %}">Go Back Home</a>
+    </div>
+</body>
+</html>
